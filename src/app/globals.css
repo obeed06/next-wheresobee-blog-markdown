@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for image grids within blog posts */
+.prose .image-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between images */
+}
+
+/* On medium screens and up, switch to a side-by-side layout */
+@media (min-width: 768px) {
+  .prose .image-grid {
+    flex-direction: row;
+  }
+}
+
+/* Remove default margins from paragraphs inside the grid */
+.prose .image-grid p {
+  margin: 0;
+  flex: 1; /* Allows images to share space equally */
+}
