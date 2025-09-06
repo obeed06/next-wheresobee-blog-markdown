@@ -1,31 +1,55 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+import { PostFrontmatter } from '../types';
 
-export const metadata: Metadata = {
-  title: 'About Me | Wanderlust Tales',
+const getAboutContent = async () => {
+  const contentDirectory = path.join(process.cwd(), 'content');
+  const filePath = path.join(contentDirectory, `about-me.md`);
+  
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+
+  const matterResult = matter(fileContents);
+  
+  // Convert markdown content to HTML
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+  const contentHtml = processedContent.toString();
+
+  return {
+    frontmatter: matterResult.data as PostFrontmatter,
+    contentHtml,
+  };
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    const about = await getAboutContent();
+
+  if (!about) {
+      // In a real app, you'd render a 404 page here
+      return <div className="text-center py-20">Post not found.</div>;
+  }
+  
+  const { frontmatter, contentHtml } = about;
+
   return (
-    <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto mt-8">
-      <h1 className="text-4xl font-extrabold mb-4 text-center text-gray-900">About Me</h1>
-      <div className="flex justify-center mb-6">
-        <Image 
-          src="/images/author-photo.jpg" // Path relative to the 'public' folder
-          alt="Photo of Alex Wanderer"
-          width={150}
-          height={150}
-          className="rounded-full object-cover"
-        />
-      </div>
-      <div className="text-lg text-gray-800 leading-relaxed space-y-4">
-        <p>
-          Hi, I'm Alex Wanderer! For as long as I can remember, I've been fascinated by the world and its diverse cultures. After years of dreaming, I finally decided to pack my bags and turn my passion for travel into a lifestyle.
-        </p>
-        <p>
-          This blog is my personal journal, a place where I share my stories, tips, and photos from the road. My goal is to inspire you to explore, to step out of your comfort zone, and to discover the beauty of our planet. Thanks for joining me on this journey!
-        </p>
-      </div>
+    <div className="bg-white py-12 sm:py-16">
+      <main className="container mx-auto max-w-4xl px-6 lg:px-8">
+        <article>
+
+          {/* Entry Content */}
+          <div 
+            className="prose lg:prose-xl max-w-none"
+            dangerouslySetInnerHTML={{ __html: contentHtml }} 
+          />
+        </article>
+      </main>
     </div>
   );
 }
