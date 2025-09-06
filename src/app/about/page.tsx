@@ -1,54 +1,39 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
-import { PostFrontmatter } from '../types';
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import { getMarkdownContent } from '../lib/markdown';
 
-const getAboutContent = async () => {
-  const contentDirectory = path.join(process.cwd(), 'content');
-  const filePath = path.join(contentDirectory, `about-me.md`);
-  
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-
-  const matterResult = matter(fileContents);
-  
-  // Convert markdown content to HTML
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  return {
-    frontmatter: matterResult.data as PostFrontmatter,
-    contentHtml,
-  };
-};
+interface AboutFrontmatter {
+  title: string;
+  author: string;
+  heroImage: string;
+}
 
 export default async function AboutPage() {
-    const about = await getAboutContent();
+  const pageContent = await getMarkdownContent<AboutFrontmatter>('about.md');
 
-  if (!about) {
-      // In a real app, you'd render a 404 page here
-      return <div className="text-center py-20">Post not found.</div>;
+  if (!pageContent) {
+    return <div className="text-center py-20">About page content not found.</div>;
   }
-  
-  const { frontmatter, contentHtml } = about;
+
+  const { frontmatter, contentHtml } = pageContent;
 
   return (
     <div className="bg-white py-12 sm:py-16">
       <main className="container mx-auto max-w-4xl px-6 lg:px-8">
-        <article>
-
-          {/* Entry Content */}
-          <div 
-            className="prose lg:prose-xl max-w-none"
-            dangerouslySetInnerHTML={{ __html: contentHtml }} 
+        <h1 className="text-4xl font-extrabold mb-4 text-center text-gray-900">{frontmatter.title}</h1>
+        <div className="flex justify-center mb-6">
+          <Image
+            src={frontmatter.heroImage}
+            alt={`Photo of ${frontmatter.author}`}
+            width={150}
+            height={150}
+            className="rounded-full object-cover"
           />
-        </article>
+        </div>
+        <div
+          className="prose lg:prose-xl max-w-none"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
       </main>
     </div>
   );

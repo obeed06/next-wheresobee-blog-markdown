@@ -1,38 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
-import Link from 'next/link';
+import { getMarkdownContent } from '../../lib/markdown';
 import { PostFrontmatter } from '../../types';
 
-// Function to get a single post's content
-const getPostContent = async (slug: string) => {
-  const postsDirectory = path.join(process.cwd(), 'content/posts');
-  const filePath = path.join(postsDirectory, `${slug}.md`);
-  
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-  const fileContents = fs.readFileSync(filePath, 'utf8');
 
-  const matterResult = matter(fileContents);
-  
-  // Convert markdown content to HTML
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  return {
-    frontmatter: matterResult.data as PostFrontmatter,
-    contentHtml,
-  };
-};
-
-// This generates the page for a specific slug
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getPostContent(params.slug);
+  const post = await getMarkdownContent<PostFrontmatter>(`posts/${params.slug}.md`);
 
   if (!post) {
       // In a real app, you'd render a 404 page here
