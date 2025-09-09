@@ -4,6 +4,10 @@ date: "2022-04-02"
 author: "Obee"
 excerpt: "A short story about my adventure into the majestic Markha Valley."
 heroImage: "/images/posts/markha-valley-trek/hero.jpg"
+
+destination: India
+region: South Asia
+continent: Asia
 ---
 
 **Trek date:** 12th August 2018 - 15th August 2018

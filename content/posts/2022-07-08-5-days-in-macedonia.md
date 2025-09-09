@@ -4,6 +4,10 @@ date: "2022-07-08"
 author: "Obee"
 excerpt: "Macedonia ..."
 heroImage: "/images/posts/5-days-in-macedonia/hero.jpg"
+
+destination: North Macedonia
+region: Balkans
+continent: Europe
 ---
 
 The first detour has occurred! My rough plan of a straight-line from Crete to London is starting to get some luscious curves. The seed was first planted on arriving in Gjirokaster, Albania where an Australian couple mentioned looping through North Macedonia and Kosovo and then continuing in the Albanian north. Well that sounds delightful, I'll have some of that please. Thus I slid into Macedonia (ixnay on the north-e, I hear the rebranding is a bit contentious with the locals), with time on my side and a desire to bring my budget back under control.

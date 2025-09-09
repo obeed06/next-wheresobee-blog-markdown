@@ -4,6 +4,9 @@ date: "2023-02-07"
 author: "Obee"
 excerpt: "Ecuador ..."
 heroImage: "/images/posts/the-buses-of-ecuador/hero.jpg"
+
+destination: Ecuador
+continent: South America
 ---
 
 Slow travel. You don't get much slower than the bus. Or atleast by fossil fuel power standards. I have only vague plans for walking or cycling around the world, and they battle hard against my slothy nature. For now the bus remains a close friend, but the kind of friend who will annoy you constantly, be a pain in the lower back but always there for you and willing to go to the ends of the earth for you.

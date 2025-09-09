@@ -4,6 +4,10 @@ date: "2022-05-27"
 author: "Obee"
 excerpt: "Santorini..."
 heroImage: "/images/posts/the-white-towns-of-santorini/hero.jpg"
+
+destination: Greece
+region: Southern Europe
+continent: Europe
 ---
 
 ## Day 1 - I like walking right?

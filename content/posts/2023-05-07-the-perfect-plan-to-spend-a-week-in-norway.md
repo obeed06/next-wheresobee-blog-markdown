@@ -4,6 +4,10 @@ date: "2023-05-07"
 author: "Obee"
 excerpt: "Norway ..."
 heroImage: "/images/posts/the-perfect-plan-to-spend-a-week-in-norway/hero.jpg"
+
+destination: Norway
+region: Scandinavia
+continent: Europe
 ---
 
 I'd set off on a 8 week Scandi Baltic adventure. I'd been fretting over where to go for this free 8 week period, with so many European countries still untrodden and unexplored to me. I'd not considered Scandinavia as an option due to its reputation for being incredibly expensive. But time works against me, I couldn't keep saying I can go there another time, extended trips away will likely become less and less frequent as I get older.

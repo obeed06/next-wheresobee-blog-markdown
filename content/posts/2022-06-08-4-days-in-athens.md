@@ -4,6 +4,10 @@ date: "2022-06-08"
 author: "Obee"
 excerpt: "Athens ..."
 heroImage: "/images/posts/4-days-in-athens/hero.jpg"
+
+destination: Greece
+region: Southern Europe
+continent: Europe
 ---
 
 ## Transfer Day - Mykonos to Athens

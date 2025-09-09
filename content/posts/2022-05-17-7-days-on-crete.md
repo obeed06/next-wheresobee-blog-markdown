@@ -4,6 +4,10 @@ date: "2022-05-17"
 author: "Obee"
 excerpt: "Crete...."
 heroImage: "/images/posts/7-days-on-crete/hero.jpg"
+
+destination: Greece
+region: Southern Europe
+continent: Europe
 ---
 Time of year: May
 

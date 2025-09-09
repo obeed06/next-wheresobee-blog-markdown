@@ -4,6 +4,10 @@ date: "2022-06-08"
 author: "Obee"
 excerpt: "Athens ..."
 heroImage: "/images/posts/rocking-around-meteora/hero.jpg"
+
+destination: Greece
+region: Southern Europe
+continent: Europe
 ---
 
 ## Day 1

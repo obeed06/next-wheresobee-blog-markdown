@@ -4,6 +4,10 @@ date: "2022-09-28"
 author: "Obee"
 excerpt: "Kosovo ..."
 heroImage: "/images/posts/three-p-s-of-kosovo/hero.jpg"
+
+destination: Kosovo
+region: Balkans
+continent: Europe
 ---
 
 The bus has become my TARDIS, I am travelling through time and space. Granted we're all doing that, it's something I become more conscious of as the bus trundles along dusty roads, eventually depositing me in a strange new world.

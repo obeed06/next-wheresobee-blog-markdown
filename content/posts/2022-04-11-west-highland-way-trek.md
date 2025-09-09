@@ -4,7 +4,12 @@ date: "2022-04-11"
 author: "Obee"
 excerpt: "Ramblings from hiking the west highland way."
 heroImage: "/images/posts/west-highland-way-trek/hero.jpg"
+
+destination: Scotland
+region: Northern Europe
+continent: Europe
 ---
+
 **Trek date:** 27th August 2020 - 31st August 2020
 
 > *Disclaimer: I’m writing this in 2022, doing my best to recollect events in the past, piecing together things that happened from notes, photos and my fallible memory.*

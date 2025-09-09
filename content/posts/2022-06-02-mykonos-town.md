@@ -4,6 +4,10 @@ date: "2022-06-02"
 author: "Obee"
 excerpt: "Mykonos ..."
 heroImage: "/images/posts/mykonos-town/hero.jpg"
+
+destination: Greece
+region: Southern Europe
+continent: Europe
 ---
 
 ## Day 1 - Barf Ferry
