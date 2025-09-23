@@ -5,8 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  padding-top: 60px;
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  height: 100%;
 }
 
 /* Hamburger Icon Styles */
