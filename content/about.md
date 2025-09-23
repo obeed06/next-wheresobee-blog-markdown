@@ -1,7 +1,7 @@
 ---
-title: 'About Me | Wanderlust Tales'
+title: 'About Me'
 author: David Obee
-heroImage: "/images/posts/markha-valley-trek/hero.jpg"
+heroImage: "/images/about/hero.jpg"
 ---
 
 ## The Story So Far...
