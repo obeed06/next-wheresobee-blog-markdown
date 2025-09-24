@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
-        {/* <Header /> */}
+        <Header />
         {/* The main content no longer needs top padding as the hero image will handle spacing */}
         <main className="flex-grow">
           {children}

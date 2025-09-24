@@ -365,14 +365,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       </div>
       <header className="staggered-menu-header" aria-label="Main navigation header">
         <div className="sm-logo" aria-label="Logo">
-          <img
-            src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
-            alt="Logo"
-            className="sm-logo-img"
-            draggable={false}
-            width={110}
-            height={24}
-          />
+
         </div>
         <button
           ref={toggleBtnRef}
@@ -399,7 +392,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </button>
       </header>
 
-      <aside id="staggered-menu-panel" ref={panelRef} style={{ backgroundColor: 'coral'}} className="bg-pink-500 staggered-menu-panel" aria-hidden={!open}>
+      <aside id="staggered-menu-panel" ref={panelRef} style={{ backgroundColor: 'coral' }} className="staggered-menu-panel" aria-hidden={!open}>
         <div className="sm-panel-inner">
           <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
             {items && items.length ? (

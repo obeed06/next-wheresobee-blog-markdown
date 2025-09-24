@@ -14,22 +14,20 @@ const socialItems = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-50 w-full">
-<div style={{ height: '100vh', background: '#1a1a1a' }}>
-  <StaggeredMenu
-    position="right"
-    items={menuItems}
-    socialItems={socialItems}
-    displaySocials={true}
-    displayItemNumbering={true}
-    menuButtonColor="#fff"
-    openMenuButtonColor="#fff"
-    changeMenuColorOnOpen={true}
-    colors={['#B19EEF', '#5227FF']}
-    logoUrl="/path-to-your-logo.svg"
-    accentColor="#ff6b6b"
-  />
-</div>
+    <header>
+        <StaggeredMenu
+          position="right"
+          items={menuItems}
+          socialItems={socialItems}
+          displaySocials={true}
+          displayItemNumbering={true}
+          menuButtonColor="#fff"
+          openMenuButtonColor="#fff"
+          changeMenuColorOnOpen={true}
+          colors={['#B19EEF', '#5227FF']}
+          logoUrl="/path-to-your-logo.svg"
+          accentColor="#5227FF"
+        />
     </header>
   );
 }
